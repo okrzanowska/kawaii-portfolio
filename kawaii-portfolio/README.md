@@ -57,3 +57,26 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Technologies
+
+This project uses the following technologies:
+
+- **Angular**: Framework for building web applications.
+- **TypeScript**: Superset of JavaScript for type-safe development.
+- **HTML/CSS**: For structuring and styling the application.
+
+## Version Information
+
+- **Angular CLI**: 19.2.5
+- **Node.js**: Ensure you are using a compatible version (e.g., 16.x or 18.x).
+- **NPM**: Ensure you have the latest version installed.
+
+## Author
+
+This project was created by Oliwia.  
+Feel free to reach out at [oliwia.krzanowska@proton.me].
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
