@@ -1,17 +1,11 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
-import { SkillsComponent } from './components/skills/skills.component';
-import { ProjectsComponent } from './components/projects/projects.component';
-import { BlogComponent } from './components/blog/blog.component';
-import { ContactComponent } from './components/contact/contact.component';
 
 export const routes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'about', component: AboutComponent },
-    { path: 'skills', component: SkillsComponent },
-    { path: 'projects', component: ProjectsComponent },
-    { path: 'blog', component: BlogComponent },
-    { path: 'contact', component: ContactComponent },
-    { path: '**', redirectTo: '' }
+    { path: '', loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent) },
+    { path: 'about', loadComponent: () => import('./components/about/about.component').then(m => m.AboutComponent) },
+    { path: 'skills', loadComponent: () => import('./components/skills/skills.component').then(m => m.SkillsComponent) },
+    { path: 'projects', loadComponent: () => import('./components/projects/projects.component').then(m => m.ProjectsComponent) },
+    { path: 'blog', loadComponent: () => import('./components/blog/blog.component').then(m => m.BlogComponent) },
+    { path: 'contact', loadComponent: () => import('./components/contact/contact.component').then(m => m.ContactComponent) },
+    { path: '**', loadComponent: () => import('./components/page-not-found/page-not-found.component').then(m => m.PageNotFoundComponent) }
 ];
