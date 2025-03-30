@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+.nav-anime {
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+  
+    &:hover {
+        color: #ff80b5;
+        transform: scale(1.05);
+    }
+  
+    &::before {
+        content: '♥';
+        position: absolute;
+        left: -0.5rem;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        color: #ff80b5;
+        font-size: 0.8rem;
+    }
+  
+    &:hover::before {
+        opacity: 1;
+        transform: translateX(-0.3rem) rotate(-10deg);
+    }
+}
