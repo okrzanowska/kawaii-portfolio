@@ -1,0 +1,44 @@
+$accent-color: #ff80b5;
+
+.nav-anime {
+    &::before {
+        content: '♥';
+        position: absolute;
+        left: -0.125rem;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        color: $accent-color;
+        font-size: 0.8rem;
+    }
+  
+    &:hover::before {
+        opacity: 1;
+        transform: translateX(-0.3rem) rotate(-10deg);
+    }
+}
+
+@media (max-width: 48rem) {
+    .nav-anime {
+        &::before {
+            content: none;
+        }
+        
+        &::after {
+            content: '♥';
+            position: absolute;
+            left: -0.125rem;
+            color: $accent-color;
+            font-size: 0.8rem;
+            opacity: 1;
+            transform: translateX(-0.3rem) rotate(-10deg);
+        }
+    }
+}
+
+.bg-menu {
+    background: url('../../../assets/icons/menu-01.svg') center / cover no-repeat;
+}
+
+.bg-flower {
+    background: url('../../../assets/icons/flower-01.svg') center / cover no-repeat;
+}
