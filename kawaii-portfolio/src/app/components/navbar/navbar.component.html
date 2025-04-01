@@ -14,17 +14,22 @@
         </li>
     </ul>
     
-    <button (click)="toggleMenu()" class="menu md:hidden text-2xl hover:scale-105">
+    <button 
+    (click)="toggleMenu()" 
+    class="menu md:hidden text-2xl hover:scale-105"
+    [attr.aria-label]="isMenuOpen ? 'Zamknij menu' : 'Otwórz menu'"
+    >
       <div class="w-8 h-8 cursor-pointer bg-menu"></div>
     </button>
 </nav>
 
 <div *ngIf="isMenuOpen" class="bg-pink-100 dark:bg-darkNight shadow-md p-4 md:hidden">
-  <ul class="flex flex-col gap-4 font-semibold text-lg">
+  <ul class="flex flex-col gap-4 font-semibold text-lg" role="menu">
     <li *ngFor="let link of navLinks">
       <a 
         [routerLink]="link.path"
         (click)="toggleMenu()"
+        role="menuitem"
         class="nav-anime relative transition-colors transition-transform duration-300 hover:text-pink-400 hover:scale-105 block mx-4 p-2"
       >
         {{ link.label }}

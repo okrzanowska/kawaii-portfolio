@@ -1,4 +1,4 @@
-@import '../../../styles/_styles.scss';
+@use '../../../styles/_styles.scss' as styles;
 
 .nav-anime {
     &::before {
@@ -7,10 +7,11 @@
         left: -0.125rem;
         opacity: 0;
         transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-        color: $accent-color;
+        color: styles.$accent-color;
         font-size: 0.8rem;
+        pointer-events: none;
     }
-  
+
     &:hover::before {
         opacity: 1;
         transform: translateX(-0.3rem) rotate(-10deg);
@@ -20,25 +21,26 @@
 @media (max-width: 48rem) {
     .nav-anime {
         &::before {
-            content: none;
+        content: none;
         }
-        
+
         &::after {
-            content: '♥';
-            position: absolute;
-            left: -0.125rem;
-            color: $accent-color;
-            font-size: 0.8rem;
-            opacity: 1;
-            transform: translateX(-0.3rem) rotate(-10deg);
+        content: '♥';
+        position: absolute;
+        left: -0.125rem;
+        color: styles.$accent-color;
+        font-size: 0.8rem;
+        opacity: 1;
+        transform: translateX(-0.3rem) rotate(-10deg);
+        pointer-events: none;
         }
     }
 }
 
 .bg-menu {
-    background: url('../../../assets/icons/menu-01.svg') center / cover no-repeat;
+  background: url('../../../assets/icons/menu-01.svg') center / cover no-repeat;
 }
 
 .bg-flower {
-    background: url('../../../assets/icons/flower-01.svg') center / cover no-repeat;
+  background: url('../../../assets/icons/flower-01.svg') center / cover no-repeat;
 }

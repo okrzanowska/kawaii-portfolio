@@ -1,6 +1,7 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { NavLink } from '../../core/models/nav-link.model';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +12,7 @@ import { RouterLink } from '@angular/router';
 export class NavbarComponent {
   isMenuOpen: boolean = false;
 
-  navLinks = [
+  navLinks: NavLink[] = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
     { path: '/skills', label: 'Skills' },
