@@ -1,5 +1,5 @@
 import { NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NavLink } from '../../core/models/nav-link.model';
 
@@ -23,5 +23,17 @@ export class NavbarComponent {
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    const target = event.target as HTMLElement;
+  
+    const clickedInsideMenu = target.closest('#mobileMenu');
+    const clickedToggleButton = target.closest('#menuToggleBtn');
+  
+    if (this.isMenuOpen && !clickedInsideMenu && !clickedToggleButton) {
+      this.isMenuOpen = false;
+    }
   }
 }

@@ -16,6 +16,7 @@
     
     <button 
     (click)="toggleMenu()" 
+    id="menuToggleBtn" 
     class="menu md:hidden text-2xl hover:scale-105"
     [attr.aria-label]="isMenuOpen ? 'Zamknij menu' : 'Otwórz menu'"
     >
@@ -23,7 +24,7 @@
     </button>
 </nav>
 
-<div *ngIf="isMenuOpen" class="bg-pink-100 dark:bg-darkNight shadow-md p-4 md:hidden">
+<div *ngIf="isMenuOpen" id="mobileMenu"class="bg-pink-100 dark:bg-darkNight shadow-md p-4 md:hidden">
   <ul class="flex flex-col gap-4 font-semibold text-lg" role="menu">
     <li *ngFor="let link of navLinks">
       <a 
