@@ -1,24 +1,11 @@
-.bg-fb {
-    background: url('../../../assets/icons/facebook-01.svg') center / cover no-repeat;
+@use '../../../styles/_styles.scss' as styles;
+
+.icon {
+    fill: styles.$basic-color;
+
 }
 
-.bg-ig {
-    background: url('../../../assets/icons/instagram-01.svg') center / cover no-repeat;
+.icon-link:hover .icon {
+    fill: styles.$accent-color;
 }
-
-.bg-tt
- {
-    background: url('../../../assets/icons/tiktok-01.svg') center / cover no-repeat;
-}
-
-.bg-yt {
-    background: url('../../../assets/icons/youtube-01.svg') center / cover no-repeat;
-}
-
-.bg-gh {
-    background: url('../../../assets/icons/github-01.svg') center / cover no-repeat;
-}
-
-.bg-li {
-    background: url('../../../assets/icons/linkedin-01.svg') center / cover no-repeat;
-}
+    
