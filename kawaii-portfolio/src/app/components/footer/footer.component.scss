@@ -1,0 +1,11 @@
+@use '../../../styles/_styles.scss' as styles;
+
+.icon {
+    fill: styles.$basic-color;
+
+}
+
+.icon-link:hover .icon {
+    fill: styles.$accent-color;
+}
+    
